@@ -38,5 +38,3 @@ def index():
 render_template('test.html', title='test_failed', form1=form_ID, form2 = form2)
 ```
 
-```
-
