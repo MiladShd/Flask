@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Test</h1>
+    <form action="" method="post" novalidate>
+        {{ form1.hidden_tag() }}
+        <p>
+            {{ form1.ID.label }}<br>
+            {{ form1.ID(size=32) }}<br>
+            {% for error in form1.ID.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form1.submit() }}</p>	
+    </form>
+<form action="" method="post" novalidate>
+		{{form2.hidden_tag() }}
+        <p>
+            {{ form2.selectQuery_form.label }}<br>
+            {{ form2.selectQuery_form(size=300) }}<br>
+            {% for error in form2.selectQuery_form.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form2.pythonQuery_form.label }}<br>
+            {{ form2.pythonQuery_form(size=100) }}<br>
+            {% for error in form2.pythonQuery_form.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form2.resultTable_form.label }}<br>
+            {{ form2.resultTable_form(size=100) }}<br>
+            {% for error in form2.resultTable_form.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form2.submit_insert() }}</p>	
+	</form>
+
+{% endblock %}
